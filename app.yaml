@@ -1,0 +1,18 @@
+runtime: python37
+api_version: 1
+threadsafe: true
+
+env_variables:
+  BUCKET_NAME: "my-bitnami-project-236405"
+  
+libraries:
+- name: ssl
+  version: latest
+
+# [START handlers]
+handlers:
+- url: /static
+  static_dir: static
+- url: /.*
+  script: main.app
+# [END handlers]
